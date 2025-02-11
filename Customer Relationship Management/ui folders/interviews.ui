@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>860</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>860</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1024</width>
+    <height>860</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Interviews</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+stop:0 #7A9A5D, stop:1 #7AB9FF);
+
+
+}
+QPushButton {
+    background-color: #2196F3;
+    border-radius: 8px;
+    border: 2px solid #1976D2;
+    padding: 10px 20px;
+    font-size: 22px;
+    color: white;
+    box-shadow: 0 4px #1976D2;
+    transition: all 0.3s ease;
+}
+
+QPushButton:hover {
+    background-color: #42A5F5;
+    box-shadow: 0 6px #1976D2;
+    transform: translateY(-4px);
+}
+
+QPushButton:pressed {
+    background-color: #1E88E5;
+    box-shadow: 0 2px #1976D2;
+    transform: translateY(2px);
+}
+</string>
+  </property>
+  <widget class="QPushButton" name="interviews_submit_button">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>300</y>
+     <width>261</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Project Submitted</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="interviews_search_line">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>210</y>
+     <width>651</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
+   </property>
+   <property name="placeholderText">
+    <string notr="true">  Search</string>
+   </property>
+   <property name="cursorMoveStyle">
+    <enum>Qt::LogicalMoveStyle</enum>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>370</y>
+     <width>851</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="rowCount">
+    <number>17</number>
+   </property>
+   <property name="columnCount">
+    <number>3</number>
+   </property>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>300</number>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderMinimumSectionSize">
+    <number>24</number>
+   </attribute>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <column>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Project Received Date</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Project Submission Date</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Exit">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>733</y>
+     <width>145</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+  background-color: #1565C0;
+    border-radius: 8px;
+    border: 2px solid #1976D2;
+    padding: 10px 20px;
+    font-size: 22px;
+    color: white;
+    box-shadow: 0 4px #1976D2;
+    transition: all 0.3s ease;
+}
+QPushButton:hover {
+    background-color: #42A5F5;
+    box-shadow: 0 6px #1976D2;
+    transform: translateY(-4px);
+}
+
+QPushButton:pressed {
+    background-color: #1E88E5;
+    box-shadow: 0 2px #1976D2;
+    transform: translateY(2px);
+}</string>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>-20</x>
+     <y>0</y>
+     <width>1101</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+    font: bold 32px &quot;Verdana&quot;;
+    color: #004080;
+background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+    stop:0 #A1C4E9, stop:0.3 #C2D9F0, stop:0.7 #A5B8C9, stop:1 #7A9EB9);
+
+
+
+    text-shadow: 1px 1px 3px #003366;
+    border-radius: 18px;
+}</string>
+   </property>
+   <property name="text">
+    <string>INTERVIEWS</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="interviews_search_button">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>210</y>
+     <width>175</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc.qrc">
+     <normaloff>:/newPrefix/icons/search.png.png</normaloff>:/newPrefix/icons/search.png.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_geriDon">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>740</y>
+     <width>371</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Back To Preview-Menu</string>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc.qrc">
+     <normaloff>:/newPrefix/icons/return.png.png</normaloff>:/newPrefix/icons/return.png.png</iconset>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="icons.qrc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

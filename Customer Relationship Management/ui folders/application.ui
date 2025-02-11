@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>860</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>860</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1024</width>
+    <height>860</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Application</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+stop:0 #5E9D56, stop:1 #58A9D9);
+
+
+
+
+}
+QPushButton {
+    background-color: #2196F3;
+    border-radius: 8px;
+    border: 2px solid #1976D2;
+    padding: 10px 20px;
+    font-size: 22px;
+    color: white;
+    box-shadow: 0 4px #1976D2;
+    transition: all 0.3s ease;
+}
+
+QPushButton:hover {
+    background-color: #42A5F5;
+    box-shadow: 0 6px #1976D2;
+    transform: translateY(-4px);
+}
+
+QPushButton:pressed {
+    background-color: #1E88E5;
+    box-shadow: 0 2px #1976D2;
+    transform: translateY(2px);
+}
+</string>
+  </property>
+  <widget class="QLineEdit" name="applications_search_line">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>220</y>
+     <width>671</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>  Search application</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="applications_table">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>510</y>
+     <width>891</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="rowCount">
+    <number>0</number>
+   </property>
+   <property name="columnCount">
+    <number>7</number>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>128</number>
+   </attribute>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+  </widget>
+  <widget class="QPushButton" name="applications_all_button">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>300</y>
+     <width>261</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string> All Applications</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="applications_defined_button">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>300</y>
+     <width>381</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Mentor Meeting (Defined)</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="applications_undefined_button">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>410</y>
+     <width>381</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Mentor Meeting (Undefined)</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="applications_search_button">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>220</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc.qrc">
+     <normaloff>:/newPrefix/icons/search.png.png</normaloff>:/newPrefix/icons/search.png.png</iconset>
+   </property>
+   <property name="ico n" stdset="0">
+    <iconset resource="icons.qrc.qrc">
+     <normaloff>:/newPrefix/icons/search.png.png</normaloff>:/newPrefix/icons/search.png.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>-30</x>
+     <y>-20</y>
+     <width>1061</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+    font: bold 32px &quot;Verdana&quot;;
+    color: #004080;
+background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+    stop:0 #A1C4E9, stop:0.5 #C2D9F0, stop:1 #7A9EB9);
+
+
+    text-shadow: 1px 1px 3px #003366;
+    border-radius: 18px;
+}</string>
+   </property>
+   <property name="text">
+    <string>APPLICATIONS</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Exit">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>760</y>
+     <width>145</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+  background-color: #1565C0;
+    border-radius: 8px;
+    border: 2px solid #1976D2;
+    padding: 10px 20px;
+    font-size: 22px;
+    color: white;
+    box-shadow: 0 4px #1976D2;
+    transition: all 0.3s ease;
+}
+QPushButton:hover {
+    background-color: #42A5F5;
+    box-shadow: 0 6px #1976D2;
+    transform: translateY(-4px);
+}
+
+QPushButton:pressed {
+    background-color: #1E88E5;
+    box-shadow: 0 2px #1976D2;
+    transform: translateY(2px);
+}</string>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_geriDon">
+   <property name="geometry">
+    <rect>
+     <x>581</x>
+     <y>410</y>
+     <width>371</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Back To Preview-Menu</string>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc.qrc">
+     <normaloff>:/newPrefix/icons/return.png.png</normaloff>:/newPrefix/icons/return.png.png</iconset>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="icons.qrc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

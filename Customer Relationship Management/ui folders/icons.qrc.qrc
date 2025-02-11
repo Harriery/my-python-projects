@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>icons/exit.png.png</file>
+    <file>icons/return.png.png</file>
+    <file>icons/exit.png.png</file>
+    <file>icons/search.png.png</file>
+  </qresource>
+</RCC>

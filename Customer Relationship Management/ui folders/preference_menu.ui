@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>widget</class>
+ <widget class="QWidget" name="widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>860</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>860</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1024</width>
+    <height>860</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Preference Menu (Admin)</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+    stop:0 #77C5B5, stop:1 #6A9BB4);
+}
+
+QPushButton {
+    background-color: #2196F3;
+    border-radius: 16px;
+    border: 2px solid #1976D2;
+    padding: 10px 20px;
+    font-size: 28px;
+    color: white;
+    box-shadow: 0 4px #1976D2;
+    transition: all 0.3s ease;
+}
+
+QPushButton:hover {
+    background-color: #42A5F5;
+    box-shadow: 0 6px #1976D2;
+    transform: translateY(-4px) scale(1.6);  /* Daha büyük boyut */
+}
+
+QPushButton:pressed {
+    background-color: #1E88E5;
+    box-shadow: 0 2px #1976D2;
+    transform: translateY(2px);
+}
+</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>-20</x>
+     <y>0</y>
+     <width>1071</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+    font: bold 32px &quot;Verdana&quot;;
+    color: #004080;
+background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+    stop:0 #9ABDE3, stop:0.5 #C3D9F0, stop:1 #6E8BB9);
+
+
+    text-shadow: 2px 2px 3px #996600;
+    border-radius: 10px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>PREFERENCE MENU</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Exit">
+   <property name="geometry">
+    <rect>
+     <x>786</x>
+     <y>690</y>
+     <width>145</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+  background-color: #1565C0;
+    border-radius: 8px;
+    border: 2px solid #1976D2;
+    padding: 10px 20px;
+    font-size: 22px;
+    color: white;
+    box-shadow: 0 4px #1976D2;
+    transition: all 0.3s ease;
+}
+QPushButton:hover {
+    background-color: #42A5F5;
+    box-shadow: 0 6px #1976D2;
+    transform: translateY(-4px);
+}
+
+QPushButton:pressed {
+    background-color: #1E88E5;
+    box-shadow: 0 2px #1976D2;
+    transform: translateY(2px);
+}</string>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_adminMenu">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>240</y>
+     <width>341</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Admin Menu</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_mentorMeeting">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>450</y>
+     <width>341</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Mentor Meeting</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_interviews">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>450</y>
+     <width>341</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Interviews</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_applications_2">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>240</y>
+     <width>341</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Applications</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
