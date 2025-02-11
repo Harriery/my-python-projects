@@ -57,7 +57,7 @@ QPushButton:pressed {
 }
 </string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="preference_title_label">
    <property name="geometry">
     <rect>
      <x>-20</x>
@@ -134,6 +134,10 @@ QPushButton:pressed {
    </property>
    <property name="text">
     <string>Exit</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/exit.png.png</normaloff>icons/exit.png.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_adminMenu">

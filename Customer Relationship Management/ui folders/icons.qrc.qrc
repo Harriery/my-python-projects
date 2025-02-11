@@ -4,5 +4,6 @@
     <file>icons/return.png.png</file>
     <file>icons/exit.png.png</file>
     <file>icons/search.png.png</file>
+	<file>icons/login.png</file>
   </qresource>
 </RCC>

@@ -98,6 +98,10 @@ QPushButton:pressed {
    <property name="text">
     <string>Exit</string>
    </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/exit.png.png</normaloff>icons/exit.png.png</iconset>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -148,8 +152,6 @@ stop:0 #C2D9F0, stop:1 #85B1CF);
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -168,8 +170,6 @@ stop:0 #C2D9F0, stop:1 #85B1CF);
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -188,8 +188,6 @@ stop:0 #C2D9F0, stop:1 #85B1CF);
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="text">
