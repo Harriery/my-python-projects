@@ -73,8 +73,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -93,8 +91,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -171,7 +167,7 @@ stop:0 #C2D9F0, stop:1 #85B1CF);
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>270</y>
+     <y>160</y>
      <width>345</width>
      <height>51</height>
     </rect>
@@ -190,7 +186,7 @@ stop:0 #C2D9F0, stop:1 #85B1CF);
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>160</y>
+     <y>270</y>
      <width>345</width>
      <height>51</height>
     </rect>
