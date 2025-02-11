@@ -37,30 +37,32 @@ QPushButton {
     border-radius: 16px;
     border: 2px solid #1976D2;
     padding: 10px 20px;
-    font-size: 28px;
+    font-size: 26px;
     color: white;
     box-shadow: 0 4px #1976D2;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 QPushButton:hover {
     background-color: #42A5F5;
-    box-shadow: 0 6px #1976D2;
-    transform: translateY(-4px);
+    box-shadow: 0 8px #1976D2;
+    transform: scale(1.2);  /* Butonu büyüt */
+    font-size: 32px; /* Yazıyı büyüt */
 }
 
 QPushButton:pressed {
     background-color: #1E88E5;
     box-shadow: 0 2px #1976D2;
-    transform: translateY(2px);
+    transform: scale(1.1); /* Basılınca biraz küçült */
+    font-size: 30px; /* Yazıyı biraz küçült */
 }
 </string>
   </property>
   <widget class="QPushButton" name="pushButton_Exit_2">
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>730</y>
+     <x>740</x>
+     <y>740</y>
      <width>145</width>
      <height>51</height>
     </rect>
@@ -68,8 +70,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -141,13 +141,15 @@ stop:0 #C2D9F0, stop:1 #85B1CF);
     <rect>
      <x>140</x>
      <y>230</y>
-     <width>341</width>
-     <height>151</height>
+     <width>271</width>
+     <height>131</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -157,15 +159,17 @@ stop:0 #C2D9F0, stop:1 #85B1CF);
   <widget class="QPushButton" name="pushButton_mentorMeeting">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>420</y>
-     <width>341</width>
-     <height>151</height>
+     <x>360</x>
+     <y>450</y>
+     <width>331</width>
+     <height>131</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -175,15 +179,17 @@ stop:0 #C2D9F0, stop:1 #85B1CF);
   <widget class="QPushButton" name="pushButton_interviews">
    <property name="geometry">
     <rect>
-     <x>590</x>
+     <x>610</x>
      <y>230</y>
-     <width>341</width>
-     <height>151</height>
+     <width>271</width>
+     <height>131</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">

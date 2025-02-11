@@ -36,25 +36,27 @@ stop:0 #5E9D56, stop:1 #58A9D9);
 }
 QPushButton {
     background-color: #2196F3;
-    border-radius: 8px;
+    border-radius: 16px;
     border: 2px solid #1976D2;
     padding: 10px 20px;
     font-size: 22px;
     color: white;
     box-shadow: 0 4px #1976D2;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 QPushButton:hover {
     background-color: #42A5F5;
-    box-shadow: 0 6px #1976D2;
-    transform: translateY(-4px);
+    box-shadow: 0 8px #1976D2;
+    transform: scale(1.2);  /* Butonu büyüt */
+    font-size: 24px; /* Yazıyı büyüt */
 }
 
 QPushButton:pressed {
     background-color: #1E88E5;
     box-shadow: 0 2px #1976D2;
-    transform: translateY(2px);
+    transform: scale(1.1); /* Basılınca biraz küçült */
+    font-size: 30px; /* Yazıyı biraz küçült */
 }
 </string>
   </property>
@@ -86,6 +88,9 @@ QPushButton:pressed {
      <height>231</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
    <property name="rowCount">
     <number>0</number>
    </property>
@@ -115,6 +120,8 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -129,13 +136,15 @@ QPushButton:pressed {
     <rect>
      <x>70</x>
      <y>300</y>
-     <width>381</width>
+     <width>421</width>
      <height>91</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -150,13 +159,15 @@ QPushButton:pressed {
     <rect>
      <x>70</x>
      <y>410</y>
-     <width>381</width>
+     <width>421</width>
      <height>81</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -236,6 +247,8 @@ background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -277,8 +290,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
