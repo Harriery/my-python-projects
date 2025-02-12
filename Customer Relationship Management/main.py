@@ -1,3 +1,4 @@
+import sys
 from PyQt6.QtWidgets import *
 from login import Ui_LoginWindow
 from preference_menu_admin import Ui_preference_menu_admin
@@ -15,7 +16,7 @@ class LoginWindow(QMainWindow):
         self.ui.setupUi(self)  # Arayüzü pencereye uygula
 
 if __name__ == "__main__":
-    uygulama = QApplication([])
+    uygulama = QApplication(sys.argv)
     pencere = LoginWindow()
     pencere.show()
     uygulama.exec()
