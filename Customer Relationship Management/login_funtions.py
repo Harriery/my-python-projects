@@ -2,7 +2,9 @@ from PyQt6.QtWidgets import *
 from login import Ui_LoginWindow
 import gdown
 import pandas as pd
-
+import sys
+from admin_menu import Ui_AdminMenu #Admin menusu UI
+from preference_menu_user import Ui_Preference_menu_user#Kullanici menusu UI
 
 
 def download_and_read_users():
@@ -21,27 +23,72 @@ def download_and_read_users():
         return None
 
 downloaded_data = download_and_read_users()
-print(downloaded_data['kullanici'])
-print(downloaded_data['yetki'])
+if downloaded_data is not None:
+    print(downloaded_data['kullanici'])
+    print(downloaded_data['yetki'])
 
 ui = Ui_LoginWindow()
+
+def show_message(title, message, icon):
+    """Mesaj kutusu gösterme fonksiyonu"""
+    msg = QMessageBox()
+    msg.setWindowTitle(title)
+    msg.setText(message)
+    msg.setIcon(icon)
+    msg.exec()
 
 def validate_user(window):
     username = window.ui.lineEdit_userName.text()
     password = window.ui.lineEdit_password.text()
+    
     if username in downloaded_data['kullanici'].values:
         index = downloaded_data[downloaded_data['kullanici'] == username].index[0]
+        
         if password == downloaded_data.loc[index, 'parola']:
+            user_role=downloaded_data.loc[index,'yetki']
             print("Barasiyla giris yapilmistir")
+            #Giris basarili,rolu belirle ve uygun menuyu ac.
+            if user_role=="admin":
+                open_admin_menu(window)
+                show_message("Login Successful","You are logged in as Administrator.",QMessageBox.Icon.Information)
+            elif user_role=="user":
+                open_user_menu(window)
+                show_message("Login Successful"," You are logged in as a user.",QMessageBox.Icon.Information)
+            else:
+                show_message("Unknown Authorization", "Authorization error, invalid user role",QMessageBox.Icon.Critical)    
+                print("Hatali sifre")
         else:
-            print("Hatali Sifre")
+            show_message("Incorrect Password", "The entered password is incorrect.",QMessageBox.Icon.Critical)
+            
     else:
-        print("Kullanici Bulunamadi")
-    user_role = downloaded_data.loc[index, 'yetki']
-    if user_role == "admin":
-        print("Admin Yetkisi ile giris yapti")
-    elif user_role == "user":
-        print("Kullanici user yetkisi ile giris yapti.")
-    else:
-        print("Bilinmeyen yetki..!")
-    
+        show_message("User Not Found", "The entered username could not be found.", QMessageBox.Icon.Critical)
+        print("Kullanici bulunamadi")        
+admin_window=None#Global degiskene eklemiyor\kaybolmuyor
+user_window=None
+
+def open_admin_menu(current_window):
+    global admin_window#global degiskenine ekleniyor ve pyton da kaybolmuyor
+    admin_window = AdminMenuWindow()
+    admin_window.show()
+    current_window.close()
+
+
+def open_user_menu(current_window):
+    global user_window
+    user_window = UserMenuWindow()
+    user_window.show()
+    current_window.close()
+
+
+class AdminMenuWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_AdminMenu()
+        self.ui.setupUi(self)
+
+
+class UserMenuWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_Preference_menu_user()
+        self.ui.setupUi(self)
