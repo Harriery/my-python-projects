@@ -12,9 +12,9 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_AdminMenu(object):
     def setupUi(self, AdminMenu):
         AdminMenu.setObjectName("AdminMenu")
-        AdminMenu.resize(1024, 860)
-        AdminMenu.setMinimumSize(QtCore.QSize(1024, 860))
-        AdminMenu.setMaximumSize(QtCore.QSize(1024, 860))
+        AdminMenu.resize(850, 640)
+        AdminMenu.setMinimumSize(QtCore.QSize(850, 640))
+        AdminMenu.setMaximumSize(QtCore.QSize(850, 640))
         AdminMenu.setStyleSheet("QWidget {\n"
 "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
 "stop:0 #7CCBA2, stop:1 #5FAFD3);\n"
@@ -25,7 +25,7 @@ class Ui_AdminMenu(object):
 "    border-radius: 16px;\n"
 "    border: 2px solid #1976D2;\n"
 "    padding: 10px 20px;\n"
-"    font-size: 24px;\n"
+"    font-size: 20px;\n"
 "    color: white;\n"
 "    box-shadow: 0 4px #1976D2;\n"
 "    transition: all 0.3s ease-in-out;\n"
@@ -35,7 +35,7 @@ class Ui_AdminMenu(object):
 "    background-color: #42A5F5;\n"
 "    box-shadow: 0 8px #1976D2;\n"
 "    transform: scale(1.2);  /* Butonu büyüt */\n"
-"    font-size: 28px; /* Yazıyı büyüt */\n"
+"    font-size: 24px; /* Yazıyı büyüt */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -46,7 +46,7 @@ class Ui_AdminMenu(object):
 "}\n"
 "")
         self.label = QtWidgets.QLabel(parent=AdminMenu)
-        self.label.setGeometry(QtCore.QRect(-10, 0, 1051, 181))
+        self.label.setGeometry(QtCore.QRect(0, 0, 861, 141))
         font = QtGui.QFont()
         font.setFamily("Verdana")
         font.setPointSize(-1)
@@ -94,19 +94,19 @@ class Ui_AdminMenu(object):
 "}")
         self.pushButton_mentorMeeting_4.setObjectName("pushButton_mentorMeeting_4")
         self.pushButton_event_recording = QtWidgets.QPushButton(parent=AdminMenu)
-        self.pushButton_event_recording.setGeometry(QtCore.QRect(90, 280, 296, 91))
+        self.pushButton_event_recording.setGeometry(QtCore.QRect(50, 180, 271, 61))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_event_recording.setFont(font)
         self.pushButton_event_recording.setObjectName("pushButton_event_recording")
         self.pushButton_mail = QtWidgets.QPushButton(parent=AdminMenu)
-        self.pushButton_mail.setGeometry(QtCore.QRect(770, 280, 181, 91))
+        self.pushButton_mail.setGeometry(QtCore.QRect(630, 180, 161, 61))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_mail.setFont(font)
         self.pushButton_mail.setObjectName("pushButton_mail")
         self.tableWidget_butunGorusmeler = QtWidgets.QTableWidget(parent=AdminMenu)
-        self.tableWidget_butunGorusmeler.setGeometry(QtCore.QRect(80, 410, 871, 321))
+        self.tableWidget_butunGorusmeler.setGeometry(QtCore.QRect(50, 260, 741, 281))
         self.tableWidget_butunGorusmeler.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.tableWidget_butunGorusmeler.setObjectName("tableWidget_butunGorusmeler")
         self.tableWidget_butunGorusmeler.setColumnCount(4)
@@ -119,9 +119,9 @@ class Ui_AdminMenu(object):
         self.tableWidget_butunGorusmeler.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_butunGorusmeler.setHorizontalHeaderItem(3, item)
-        self.tableWidget_butunGorusmeler.horizontalHeader().setDefaultSectionSize(210)
+        self.tableWidget_butunGorusmeler.horizontalHeader().setDefaultSectionSize(186)
         self.pushButton_geriDon = QtWidgets.QPushButton(parent=AdminMenu)
-        self.pushButton_geriDon.setGeometry(QtCore.QRect(80, 760, 426, 51))
+        self.pushButton_geriDon.setGeometry(QtCore.QRect(50, 557, 426, 51))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_geriDon.setFont(font)
@@ -131,7 +131,7 @@ class Ui_AdminMenu(object):
         self.pushButton_geriDon.setIcon(icon)
         self.pushButton_geriDon.setObjectName("pushButton_geriDon")
         self.pushButton_Exit = QtWidgets.QPushButton(parent=AdminMenu)
-        self.pushButton_Exit.setGeometry(QtCore.QRect(810, 760, 145, 51))
+        self.pushButton_Exit.setGeometry(QtCore.QRect(650, 560, 145, 51))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_Exit.setFont(font)
