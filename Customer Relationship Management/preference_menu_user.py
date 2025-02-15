@@ -12,9 +12,9 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Preference_menu_user(object):
     def setupUi(self, Preference_menu_user):
         Preference_menu_user.setObjectName("Preference_menu_user")
-        Preference_menu_user.resize(1024, 860)
-        Preference_menu_user.setMinimumSize(QtCore.QSize(1024, 860))
-        Preference_menu_user.setMaximumSize(QtCore.QSize(1024, 860))
+        Preference_menu_user.resize(850, 640)
+        Preference_menu_user.setMinimumSize(QtCore.QSize(850, 640))
+        Preference_menu_user.setMaximumSize(QtCore.QSize(850, 640))
         Preference_menu_user.setStyleSheet("QWidget {\n"
 "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
 "stop:0 #4D9E63, stop:1 #5A99D9);\n"
@@ -26,7 +26,7 @@ class Ui_Preference_menu_user(object):
 "    border-radius: 16px;\n"
 "    border: 2px solid #1976D2;\n"
 "    padding: 10px 20px;\n"
-"    font-size: 26px;\n"
+"    font-size: 20px;\n"
 "    color: white;\n"
 "    box-shadow: 0 4px #1976D2;\n"
 "    transition: all 0.3s ease-in-out;\n"
@@ -36,7 +36,7 @@ class Ui_Preference_menu_user(object):
 "    background-color: #42A5F5;\n"
 "    box-shadow: 0 8px #1976D2;\n"
 "    transform: scale(1.2);  /* Butonu büyüt */\n"
-"    font-size: 32px; /* Yazıyı büyüt */\n"
+"    font-size: 24px; /* Yazıyı büyüt */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -47,7 +47,7 @@ class Ui_Preference_menu_user(object):
 "}\n"
 "")
         self.pushButton_Exit_2 = QtWidgets.QPushButton(parent=Preference_menu_user)
-        self.pushButton_Exit_2.setGeometry(QtCore.QRect(740, 740, 145, 51))
+        self.pushButton_Exit_2.setGeometry(QtCore.QRect(620, 560, 145, 51))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_Exit_2.setFont(font)
@@ -76,8 +76,26 @@ class Ui_Preference_menu_user(object):
         icon.addPixmap(QtGui.QPixmap("icons/exit.png.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_Exit_2.setIcon(icon)
         self.pushButton_Exit_2.setObjectName("pushButton_Exit_2")
+        self.pushButton_applications = QtWidgets.QPushButton(parent=Preference_menu_user)
+        self.pushButton_applications.setGeometry(QtCore.QRect(500, 200, 271, 131))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.pushButton_applications.setFont(font)
+        self.pushButton_applications.setObjectName("pushButton_applications")
+        self.pushButton_mentorMeeting = QtWidgets.QPushButton(parent=Preference_menu_user)
+        self.pushButton_mentorMeeting.setGeometry(QtCore.QRect(290, 380, 281, 131))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.pushButton_mentorMeeting.setFont(font)
+        self.pushButton_mentorMeeting.setObjectName("pushButton_mentorMeeting")
+        self.pushButton_interviews = QtWidgets.QPushButton(parent=Preference_menu_user)
+        self.pushButton_interviews.setGeometry(QtCore.QRect(80, 200, 271, 131))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.pushButton_interviews.setFont(font)
+        self.pushButton_interviews.setObjectName("pushButton_interviews")
         self.label = QtWidgets.QLabel(parent=Preference_menu_user)
-        self.label.setGeometry(QtCore.QRect(-4, -10, 1031, 181))
+        self.label.setGeometry(QtCore.QRect(-10, 0, 871, 141))
         font = QtGui.QFont()
         font.setFamily("Verdana")
         font.setPointSize(-1)
@@ -97,24 +115,6 @@ class Ui_Preference_menu_user(object):
 "")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
-        self.pushButton_applications = QtWidgets.QPushButton(parent=Preference_menu_user)
-        self.pushButton_applications.setGeometry(QtCore.QRect(140, 230, 271, 131))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_applications.setFont(font)
-        self.pushButton_applications.setObjectName("pushButton_applications")
-        self.pushButton_mentorMeeting = QtWidgets.QPushButton(parent=Preference_menu_user)
-        self.pushButton_mentorMeeting.setGeometry(QtCore.QRect(360, 450, 331, 131))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_mentorMeeting.setFont(font)
-        self.pushButton_mentorMeeting.setObjectName("pushButton_mentorMeeting")
-        self.pushButton_interviews = QtWidgets.QPushButton(parent=Preference_menu_user)
-        self.pushButton_interviews.setGeometry(QtCore.QRect(610, 230, 271, 131))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_interviews.setFont(font)
-        self.pushButton_interviews.setObjectName("pushButton_interviews")
 
         self.retranslateUi(Preference_menu_user)
         QtCore.QMetaObject.connectSlotsByName(Preference_menu_user)
@@ -123,10 +123,10 @@ class Ui_Preference_menu_user(object):
         _translate = QtCore.QCoreApplication.translate
         Preference_menu_user.setWindowTitle(_translate("Preference_menu_user", "Preference Menu (User)"))
         self.pushButton_Exit_2.setText(_translate("Preference_menu_user", "Exit"))
-        self.label.setText(_translate("Preference_menu_user", "PREFERENCE MENU"))
         self.pushButton_applications.setText(_translate("Preference_menu_user", "Applications"))
         self.pushButton_mentorMeeting.setText(_translate("Preference_menu_user", "Mentor Meeting"))
         self.pushButton_interviews.setText(_translate("Preference_menu_user", "Interviews"))
+        self.label.setText(_translate("Preference_menu_user", "PREFERENCE MENU"))
 
 
 if __name__ == "__main__":

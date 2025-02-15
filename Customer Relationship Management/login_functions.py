@@ -78,7 +78,3 @@ def open_user_menu(current_window):
     user_window = UserPreferenceMenuWindow()
     user_window.show()
     current_window.close()
-
-
-
-

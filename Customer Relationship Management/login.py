@@ -12,9 +12,9 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_LoginWindow(object):
     def setupUi(self, LoginWindow):
         LoginWindow.setObjectName("LoginWindow")
-        LoginWindow.resize(600, 700)
-        LoginWindow.setMinimumSize(QtCore.QSize(600, 700))
-        LoginWindow.setMaximumSize(QtCore.QSize(600, 700))
+        LoginWindow.resize(500, 600)
+        LoginWindow.setMinimumSize(QtCore.QSize(500, 600))
+        LoginWindow.setMaximumSize(QtCore.QSize(500, 600))
         LoginWindow.setStyleSheet("QWidget {\n"
 "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
 "stop:0 #7CCBA2, stop:1 #5FAFD3);\n"
@@ -44,7 +44,7 @@ class Ui_LoginWindow(object):
 "}\n"
 "")
         self.pushButton_login = QtWidgets.QPushButton(parent=LoginWindow)
-        self.pushButton_login.setGeometry(QtCore.QRect(130, 400, 345, 51))
+        self.pushButton_login.setGeometry(QtCore.QRect(140, 390, 231, 61))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -55,7 +55,7 @@ class Ui_LoginWindow(object):
         self.pushButton_login.setFont(font)
         self.pushButton_login.setObjectName("pushButton_login")
         self.pushButton_cikis = QtWidgets.QPushButton(parent=LoginWindow)
-        self.pushButton_cikis.setGeometry(QtCore.QRect(220, 590, 169, 51))
+        self.pushButton_cikis.setGeometry(QtCore.QRect(169, 500, 169, 51))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_cikis.setFont(font)
@@ -64,7 +64,7 @@ class Ui_LoginWindow(object):
         self.pushButton_cikis.setIcon(icon)
         self.pushButton_cikis.setObjectName("pushButton_cikis")
         self.label_2 = QtWidgets.QLabel(parent=LoginWindow)
-        self.label_2.setGeometry(QtCore.QRect(120, 240, 345, 31))
+        self.label_2.setGeometry(QtCore.QRect(77, 279, 345, 31))
         font = QtGui.QFont()
         font.setFamily("Verdana")
         font.setPointSize(-1)
@@ -73,7 +73,7 @@ class Ui_LoginWindow(object):
         font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("QWidget {\n"
-"    font: bold 25px \"Verdana\";\n"
+"    font: bold 18px \"Verdana\";\n"
 "    color: #004080;\n"
 "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
 "stop:0 #C2D9F0, stop:1 #85B1CF);\n"
@@ -81,9 +81,10 @@ class Ui_LoginWindow(object):
 "    border-radius: 10px;\n"
 "}\n"
 "")
+        self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.label = QtWidgets.QLabel(parent=LoginWindow)
-        self.label.setGeometry(QtCore.QRect(120, 130, 345, 31))
+        self.label.setGeometry(QtCore.QRect(80, 190, 345, 31))
         font = QtGui.QFont()
         font.setFamily("Verdana")
         font.setPointSize(-1)
@@ -92,7 +93,7 @@ class Ui_LoginWindow(object):
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setStyleSheet("QWidget {\n"
-"    font: bold 25px \"Verdana\";\n"
+"    font: bold 18px \"Verdana\";\n"
 "    color: #004080;\n"
 "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
 "stop:0 #C2D9F0, stop:1 #85B1CF);\n"
@@ -100,35 +101,44 @@ class Ui_LoginWindow(object):
 "    border-radius: 10px;\n"
 "}\n"
 "")
+        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
         self.lineEdit_userName = QtWidgets.QLineEdit(parent=LoginWindow)
-        self.lineEdit_userName.setGeometry(QtCore.QRect(120, 160, 345, 51))
+        self.lineEdit_userName.setGeometry(QtCore.QRect(83, 220, 341, 41))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineEdit_userName.sizePolicy().hasHeightForWidth())
         self.lineEdit_userName.setSizePolicy(sizePolicy)
-        self.lineEdit_userName.setStyleSheet("border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));")
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.lineEdit_userName.setFont(font)
+        self.lineEdit_userName.setStyleSheet("color: black;")
+        self.lineEdit_userName.setText("")
         self.lineEdit_userName.setObjectName("lineEdit_userName")
         self.lineEdit_password = QtWidgets.QLineEdit(parent=LoginWindow)
-        self.lineEdit_password.setGeometry(QtCore.QRect(120, 270, 345, 51))
+        self.lineEdit_password.setGeometry(QtCore.QRect(80, 310, 341, 41))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineEdit_password.sizePolicy().hasHeightForWidth())
         self.lineEdit_password.setSizePolicy(sizePolicy)
+        self.lineEdit_password.setStyleSheet("color: black;")
         self.lineEdit_password.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.lineEdit_password.setObjectName("lineEdit_password")
-        self.login_error_label = QtWidgets.QLabel(parent=LoginWindow)
-        self.login_error_label.setEnabled(False)
-        self.login_error_label.setGeometry(QtCore.QRect(180, 480, 231, 51))
-        self.login_error_label.setStyleSheet("QLabel {\n"
-"    background-color: transparent;\n"
-"    border: none;\n"
-"    color: transparent;\n"
-"}\n"
-"")
-        self.login_error_label.setObjectName("login_error_label")
+        self.label_3 = QtWidgets.QLabel(parent=LoginWindow)
+        self.label_3.setGeometry(QtCore.QRect(-10, 0, 511, 151))
+        self.label_3.setStyleSheet("QWidget {\n"
+"    font: bold 22px \"Verdana\";\n"
+"    color: #004080;\n"
+"background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
+"stop:0 #C2D9F0, stop:1 #85B1CF);\n"
+"    text-shadow: 2px 2px 3px #996600;\n"
+"    border-radius: 10px;\n"
+"}")
+        self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_3.setWordWrap(True)
+        self.label_3.setObjectName("label_3")
 
         self.retranslateUi(LoginWindow)
         QtCore.QMetaObject.connectSlotsByName(LoginWindow)
@@ -140,7 +150,7 @@ class Ui_LoginWindow(object):
         self.pushButton_cikis.setText(_translate("LoginWindow", "Exit"))
         self.label_2.setText(_translate("LoginWindow", "Password"))
         self.label.setText(_translate("LoginWindow", "User Name"))
-        self.login_error_label.setText(_translate("LoginWindow", "Invalid entry, please try again."))
+        self.label_3.setText(_translate("LoginWindow", "CUSTOMER RELATIONSHIP MANAGEMENT (CRM)"))
 
 
 if __name__ == "__main__":

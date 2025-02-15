@@ -12,9 +12,9 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_preference_menu_admin(object):
     def setupUi(self, preference_menu_admin):
         preference_menu_admin.setObjectName("preference_menu_admin")
-        preference_menu_admin.resize(1024, 860)
-        preference_menu_admin.setMinimumSize(QtCore.QSize(1024, 860))
-        preference_menu_admin.setMaximumSize(QtCore.QSize(1024, 860))
+        preference_menu_admin.resize(850, 640)
+        preference_menu_admin.setMinimumSize(QtCore.QSize(850, 640))
+        preference_menu_admin.setMaximumSize(QtCore.QSize(850, 640))
         preference_menu_admin.setStyleSheet("QWidget {\n"
 "    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
 "    stop:0 #77C5B5, stop:1 #6A9BB4);\n"
@@ -25,7 +25,7 @@ class Ui_preference_menu_admin(object):
 "    border-radius: 16px;\n"
 "    border: 2px solid #1976D2;\n"
 "    padding: 10px 20px;\n"
-"    font-size: 26px;\n"
+"    font-size: 20px;\n"
 "    color: white;\n"
 "    box-shadow: 0 4px #1976D2;\n"
 "    transition: all 0.3s ease-in-out;\n"
@@ -35,7 +35,7 @@ class Ui_preference_menu_admin(object):
 "    background-color: #42A5F5;\n"
 "    box-shadow: 0 8px #1976D2;\n"
 "    transform: scale(1.2);  /* Butonu büyüt */\n"
-"    font-size: 32px; /* Yazıyı büyüt */\n"
+"    font-size: 24px; /* Yazıyı büyüt */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -46,7 +46,7 @@ class Ui_preference_menu_admin(object):
 "}\n"
 "")
         self.preference_title_label = QtWidgets.QLabel(parent=preference_menu_admin)
-        self.preference_title_label.setGeometry(QtCore.QRect(-20, 0, 1071, 171))
+        self.preference_title_label.setGeometry(QtCore.QRect(0, 0, 861, 141))
         font = QtGui.QFont()
         font.setFamily("Verdana")
         font.setPointSize(-1)
@@ -68,7 +68,7 @@ class Ui_preference_menu_admin(object):
         self.preference_title_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.preference_title_label.setObjectName("preference_title_label")
         self.pushButton_Exit = QtWidgets.QPushButton(parent=preference_menu_admin)
-        self.pushButton_Exit.setGeometry(QtCore.QRect(680, 750, 145, 51))
+        self.pushButton_Exit.setGeometry(QtCore.QRect(600, 560, 145, 51))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_Exit.setFont(font)
@@ -98,25 +98,25 @@ class Ui_preference_menu_admin(object):
         self.pushButton_Exit.setIcon(icon)
         self.pushButton_Exit.setObjectName("pushButton_Exit")
         self.pushButton_adminMenu = QtWidgets.QPushButton(parent=preference_menu_admin)
-        self.pushButton_adminMenu.setGeometry(QtCore.QRect(540, 490, 301, 131))
+        self.pushButton_adminMenu.setGeometry(QtCore.QRect(480, 219, 271, 131))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_adminMenu.setFont(font)
         self.pushButton_adminMenu.setObjectName("pushButton_adminMenu")
         self.pushButton_mentorMeeting = QtWidgets.QPushButton(parent=preference_menu_admin)
-        self.pushButton_mentorMeeting.setGeometry(QtCore.QRect(540, 290, 301, 131))
+        self.pushButton_mentorMeeting.setGeometry(QtCore.QRect(90, 220, 261, 131))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_mentorMeeting.setFont(font)
         self.pushButton_mentorMeeting.setObjectName("pushButton_mentorMeeting")
         self.pushButton_interviews = QtWidgets.QPushButton(parent=preference_menu_admin)
-        self.pushButton_interviews.setGeometry(QtCore.QRect(160, 290, 301, 131))
+        self.pushButton_interviews.setGeometry(QtCore.QRect(480, 390, 271, 131))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_interviews.setFont(font)
         self.pushButton_interviews.setObjectName("pushButton_interviews")
         self.pushButton_applications_2 = QtWidgets.QPushButton(parent=preference_menu_admin)
-        self.pushButton_applications_2.setGeometry(QtCore.QRect(160, 490, 301, 131))
+        self.pushButton_applications_2.setGeometry(QtCore.QRect(90, 390, 261, 131))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.pushButton_applications_2.setFont(font)
@@ -128,7 +128,7 @@ class Ui_preference_menu_admin(object):
     def retranslateUi(self, preference_menu_admin):
         _translate = QtCore.QCoreApplication.translate
         preference_menu_admin.setWindowTitle(_translate("preference_menu_admin", "Preference Menu (Admin)"))
-        self.preference_title_label.setText(_translate("preference_menu_admin", "PREFERENCE MENU"))
+        self.preference_title_label.setText(_translate("preference_menu_admin", "PREFERENCE MENU (ADMIN)"))
         self.pushButton_Exit.setText(_translate("preference_menu_admin", "Exit"))
         self.pushButton_adminMenu.setText(_translate("preference_menu_admin", "Admin Menu"))
         self.pushButton_mentorMeeting.setText(_translate("preference_menu_admin", "Mentor Meeting"))

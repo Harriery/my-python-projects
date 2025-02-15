@@ -49,7 +49,7 @@ class LoginWindow(QMainWindow):
         self.ui.pushButton_cikis.clicked.connect(self.close_application)
     
     def handle_login(self):
-        from login_funtions import validate_user  # Döngüsel import hatası almamak için burada import ettik.
+        from login_functions import validate_user  # Döngüsel import hatası almamak için burada import ettik.
         validate_user(self)  # Mevcut pencereyi parametre olarak gönderiyoruz.
 
     def close_application(self):
