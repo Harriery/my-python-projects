@@ -77,7 +77,7 @@ QPushButton:pressed {
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgb(194, 255, 255);</string>
    </property>
    <property name="text">
     <string/>
@@ -96,7 +96,8 @@ QPushButton:pressed {
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(185, 252, 255);
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="rowCount">
     <number>0</number>
