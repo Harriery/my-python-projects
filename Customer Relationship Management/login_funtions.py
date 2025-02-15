@@ -3,8 +3,8 @@ from login import Ui_LoginWindow
 import gdown
 import pandas as pd
 import sys
-from admin_menu import Ui_AdminMenu #Admin menusu UI
-from preference_menu_user import Ui_Preference_menu_user#Kullanici menusu UI
+from preference_menu_admin_function import AdminPreferenceMenuWindow #Admin menusu UI
+from preference_menu_user_function import UserPreferenceMenuWindow#Kullanici menusu UI
 
 
 def download_and_read_users():
@@ -68,27 +68,17 @@ user_window=None
 
 def open_admin_menu(current_window):
     global admin_window#global degiskenine ekleniyor ve pyton da kaybolmuyor
-    admin_window = AdminMenuWindow()
+    admin_window = AdminPreferenceMenuWindow()
     admin_window.show()
     current_window.close()
 
 
 def open_user_menu(current_window):
     global user_window
-    user_window = UserMenuWindow()
+    user_window = UserPreferenceMenuWindow()
     user_window.show()
     current_window.close()
 
 
-class AdminMenuWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.ui = Ui_AdminMenu()
-        self.ui.setupUi(self)
 
 
-class UserMenuWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.ui = Ui_Preference_menu_user()
-        self.ui.setupUi(self)
