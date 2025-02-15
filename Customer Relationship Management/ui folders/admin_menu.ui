@@ -181,10 +181,13 @@ QPushButton:pressed {
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(176, 255, 249);</string>
    </property>
    <attribute name="horizontalHeaderDefaultSectionSize">
-    <number>186</number>
+    <number>185</number>
+   </attribute>
+   <attribute name="horizontalHeaderHighlightSections">
+    <bool>false</bool>
    </attribute>
    <column>
     <property name="text">

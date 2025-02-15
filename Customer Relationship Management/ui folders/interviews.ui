@@ -58,7 +58,7 @@ QPushButton:pressed {
 }
 </string>
   </property>
-  <widget class="QPushButton" name="interviews_submit_button">
+  <widget class="QPushButton" name="pushButton_project_submitted">
    <property name="geometry">
     <rect>
      <x>560</x>
@@ -82,9 +82,9 @@ QPushButton:pressed {
   <widget class="QLineEdit" name="interviews_search_line">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>190</y>
-     <width>541</width>
+     <x>50</x>
+     <y>170</y>
+     <width>561</width>
      <height>41</height>
     </rect>
    </property>
@@ -95,7 +95,8 @@ QPushButton:pressed {
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgb(202, 255, 254);
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="frame">
     <bool>true</bool>
@@ -121,6 +122,10 @@ QPushButton:pressed {
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(192, 255, 255);
+color: rgb(0, 0, 0);</string>
+   </property>
    <property name="rowCount">
     <number>17</number>
    </property>
@@ -131,7 +136,7 @@ QPushButton:pressed {
     <bool>false</bool>
    </attribute>
    <attribute name="horizontalHeaderDefaultSectionSize">
-    <number>300</number>
+    <number>208</number>
    </attribute>
    <attribute name="horizontalHeaderStretchLastSection">
     <bool>true</bool>
@@ -255,11 +260,11 @@ background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="interviews_search_button">
+  <widget class="QPushButton" name="pushButton_search">
    <property name="geometry">
     <rect>
      <x>640</x>
-     <y>190</y>
+     <y>170</y>
      <width>151</width>
      <height>51</height>
     </rect>
@@ -295,6 +300,27 @@ background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
    <property name="icon">
     <iconset resource="icons.qrc.qrc">
      <normaloff>:/newPrefix/icons/return.png.png</normaloff>:/newPrefix/icons/return.png.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_incoming_projects">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>250</y>
+     <width>241</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Incoming Projects</string>
    </property>
   </widget>
  </widget>
