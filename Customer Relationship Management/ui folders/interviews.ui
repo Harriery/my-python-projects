@@ -260,7 +260,7 @@ background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>Search</string>
    </property>
    <property name="icon">
     <iconset resource="icons.qrc.qrc">
