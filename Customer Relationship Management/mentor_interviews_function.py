@@ -123,18 +123,20 @@ class MentorInterviewsWindow(QMainWindow):
             self.ui.tableWidget_butunGorusmeler.clearContents()
             self.ui.tableWidget_butunGorusmeler.setRowCount(len(filtered_df))
 
-            # Filtrelenen verileri tabloya ekle
-            for row_index, row_data in enumerate(filtered_df.itertuples(index=False), start=0):
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 0, QTableWidgetItem(str(row_data[0])))  # Gorusme Tarihi
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 1, QTableWidgetItem(str(row_data[1])))  # Ad soyad
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 2, QTableWidgetItem(str(row_data[2])))  # Mentor
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 3, QTableWidgetItem(str(row_data[3])))  # IT Bilgisi
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 4, QTableWidgetItem(str(row_data[4])))  # Yogunluk
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 5, QTableWidgetItem(str(row_data[5])))  # Yorum
+            # ✅ Doğru sütun isimleriyle sıralı şekilde ekle
+            for row_index in range(len(filtered_df)):
+                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 0, QTableWidgetItem(str(filtered_df.iloc[row_index]['Gorusme Tarihi'])))  
+                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 1, QTableWidgetItem(str(filtered_df.iloc[row_index]['Ad soyad'])))  
+                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 2, QTableWidgetItem(str(filtered_df.iloc[row_index]['Mentor'])))  
+                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 3, QTableWidgetItem(str(filtered_df.iloc[row_index]['IT Bilgisi'])))  
+                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 4, QTableWidgetItem(str(filtered_df.iloc[row_index]['Yogunluk'])))  
+                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 5, QTableWidgetItem(str(filtered_df.iloc[row_index]['Yorum'])))  
+
+            print(f"✅ '{search_text}' ile ilgili {len(filtered_df)} kayıt bulundu ve tabloya yansıtıldı.")
 
         except Exception as e:
-            print(f"Hata oluştu: {e}")
-    
+            print(f"⚠️ Hata oluştu: {e}")
+
     def load_comment_options(self):
     
         file_path = "Mentor.xlsx"  
