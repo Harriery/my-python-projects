@@ -5,6 +5,7 @@ from application import Ui_Applications
 from mentor_interview import Ui_MentorInterview
 from interviews import Ui_Interviews
 from admin_menu import Ui_AdminMenu
+from mentor_interviews_function import MentorInterviewsWindow
 
 
 class AdminPreferenceMenuWindow(QMainWindow):
@@ -44,11 +45,9 @@ class AdminPreferenceMenuWindow(QMainWindow):
 
     def open_mentor_interview(self):
         print("Mentor Interview butonuna basıldı.")
-        self.mentor_interview_window = QMainWindow()
-        ui = Ui_MentorInterview()
-        ui.setupUi(self.mentor_interview_window)
+        self.mentor_interview_window = MentorInterviewsWindow(user_type="admin")
         self.mentor_interview_window.show()
-        self.close()
+        self.close()  # Mevcut pencereyi kapat
 
     def open_interviews(self):
         print("Interviews butonuna basıldı.")
