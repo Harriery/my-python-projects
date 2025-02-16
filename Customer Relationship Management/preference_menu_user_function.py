@@ -4,7 +4,7 @@ from preference_menu_user import Ui_Preference_menu_user
 from application import Ui_Applications
 from mentor_interview import Ui_MentorInterview
 from interviews import Ui_Interviews
-
+from mentor_interviews_function import MentorInterviewsWindow
 
 
 class UserPreferenceMenuWindow(QMainWindow):
@@ -40,11 +40,11 @@ class UserPreferenceMenuWindow(QMainWindow):
         self.close()
 
     def open_mentor_interview(self):
-        self.mentor_interview_window = QMainWindow()
-        self.mentor_interview_ui = Ui_MentorInterview()
-        self.mentor_interview_ui.setupUi(self.mentor_interview_window)
+        print("Mentor Interview butonuna basıldı (User olarak açılıyor).")
+        self.mentor_interview_window = MentorInterviewsWindow(user_type="user")  # User olduğunu belirtiyoruz
         self.mentor_interview_window.show()
         self.close()
+
 
     def open_interviews(self):
         """Interviews ekranını açar"""

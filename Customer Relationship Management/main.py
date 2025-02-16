@@ -8,6 +8,8 @@ from application import Ui_Applications
 from admin_menu import Ui_AdminMenu
 from interviews import Ui_Interviews
 from mentor_interview import Ui_MentorInterview
+from mentor_interviews_function import MentorInterviewsWindow
+
 
 
 # Kullanıcı menüsü sınıfı
