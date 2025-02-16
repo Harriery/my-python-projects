@@ -6,6 +6,7 @@ from mentor_interview import Ui_MentorInterview
 from interviews import Ui_Interviews
 from admin_menu import Ui_AdminMenu
 from mentor_interviews_function import MentorInterviewsWindow
+from application_function import Application_Window
 
 
 class AdminPreferenceMenuWindow(QMainWindow):
@@ -35,13 +36,11 @@ class AdminPreferenceMenuWindow(QMainWindow):
         self.interviews_window = None
         self.admin_menu_window = None
 
-    def open_applications(self):
-        print("Applications butonuna basıldı.") 
-        self.applications_window = QMainWindow()  # Yeni pencere oluştur
-        ui = Ui_Applications()
-        ui.setupUi(self.applications_window)  
-        self.applications_window.show()  # Pencereyi göster
-        self.close()  # Mevcut pencereyi kapat
+    def open_application(self):
+        print("Application butonuna basıldı (User olarak açılıyor).")
+        self.application_window = Application_Window(user_type="admin")  # User olduğunu belirtiyoruz
+        self.application_window.show()
+        self.close()
 
     def open_mentor_interview(self):
         print("Mentor Interview butonuna basıldı.")
