@@ -5,6 +5,7 @@ import pandas as pd
 import sys
 from preference_menu_user import Ui_Preference_menu_user
 from preference_menu_admin import Ui_preference_menu_admin
+from application import Ui_Applications
 
 def download_and_read_Application():
     try:
@@ -27,20 +28,21 @@ if downloaded_data3 is not None:
     print(downloaded_data3['Posta Kodunuz'])
 
 class Application_Window(QMainWindow):
-    def __init__(self):
+    def __init__(self, user_type = "user"):
         super().__init__()
-        self.ui = Ui_MentorInterview()
+        self.ui = Ui_Applications()
         self.ui.setupUi(self)
+        self.user_type=user_type
 
         print("Application_Window yüklendi.")
         # Butonlara tıklanınca ilgili fonksiyonu çağır
         self.ui.pushButton_Exit.clicked.connect(self.exit)
         print("pushButton_Exit bağlandı.")
 
-        self.ui.pushButton_geriDon.clicked.connect(self.geriDon)
+        self.ui.pushButton_geriDon.clicked.connect(self.back_to_preference)
         print("pushButton_geriDon bağlandı.")
 
-        self.ui.applications_all_button.clicked.connect(self.all_button)
+        self.ui.applications_all_button.clicked.connect(self.load_all_applications)
         print("applications_all_button bağlandı.")
 
         self.ui.applications_defined_button.clicked.connect(self.load_defined_mentor_meetings)
@@ -56,22 +58,21 @@ class Application_Window(QMainWindow):
 
 
 
-    def geriDon(self):
-        """Ana menüye geri döner."""
-        self.close()  # Mevcut pencereyi kapat
-        if self.parent_window:
-            self.parent_window.show() 
+    def back_to_preference(self):
+            from preference_menu_user_function import UserPreferenceMenuWindow  
+            from preference_menu_admin_function import AdminPreferenceMenuWindow  
 
-    
+            self.close()  # Mevcut pencereyi kapat
 
+            # Kullanıcı veya admin menüsüne dön
+            if self.user_type == "admin":
+                print("Admin menüsüne geri dönülüyor...")
+                self.preference_menu = AdminPreferenceMenuWindow()
+            else:
+                print("User menüsüne geri dönülüyor...")
+                self.preference_menu = UserPreferenceMenuWindow()
 
-
-
-
-
-
-
-
+            self.preference_menu.show()
 
         
 
@@ -86,43 +87,32 @@ class Application_Window(QMainWindow):
 
 
 
-    def all_button(self):
-        """
-        Google Sheets'ten Excel dosyasını indirip QTableWidget'e yükler.
-        """
-        file_path = "Basvurular.xlsx"  
+    def load_all_applications(self):
+        
+        file_path = "Basvurular.xlsx"  # İndirilen dosyanın adı
 
         try:
-            # ✅ Excel dosyasını indir ve oku
-            df = download_and_read_Application()
+            # Dosyayı indir
+            download_and_read_Application()
 
-            if df is None:
-                print("⚠️ Dosya yüklenemedi!")
-                return
+            # Excel dosyasını oku
+            df = pd.read_excel(file_path, engine="openpyxl")
 
-            # ✅ İstediğimiz sütunları al
-            selected_columns = [
-                'Zaman damgası', 'Adınız Soyadınız', 'Mail adresiniz',
-                'Telefon Numaranız', 'Posta Kodunuz', 'Yaşadığınız Eyalet', 'Şu anki durumunuz'
-            ]
+            # Tabloyu temizle
+            self.ui.applications_table.setRowCount(0)
             
-            df = df[selected_columns]  # Sadece gerekli sütunları al
-            
-            # 📌 QTableWidget'i temizle
-            self.ui.tableWidget.clearContents()
-            self.ui.tableWidget.setRowCount(0)
 
-            # ✅ Verileri tabloya ekle
+
+            # Verileri tabloya ekle
             for row_index, row_data in df.iterrows():
-                self.ui.tableWidget.insertRow(row_index)  # Yeni satır ekle
-                self.ui.tableWidget.setItem(row_index, 0, QTableWidgetItem(str(row_data['Zaman damgası'])))
-                self.ui.tableWidget.setItem(row_index, 1, QTableWidgetItem(str(row_data['Adınız Soyadınız'])))
-                self.ui.tableWidget.setItem(row_index, 2, QTableWidgetItem(str(row_data['Mail adresiniz'])))
-                self.ui.tableWidget.setItem(row_index, 3, QTableWidgetItem(str(row_data['Telefon Numaranız'])))
-                self.ui.tableWidget.setItem(row_index, 4, QTableWidgetItem(str(row_data['Posta Kodunuz'])))
-                self.ui.tableWidget.setItem(row_index, 5, QTableWidgetItem(str(row_data['Yaşadığınız Eyalet'])))
-                self.ui.tableWidget.setItem(row_index, 6, QTableWidgetItem(str(row_data['Şu anki durumunuz'])))
-
+                self.ui.applications_table.insertRow(row_index)
+                self.ui.applications_table.setItem(row_index, 0, QTableWidgetItem(str(row_data['Zaman damgası'])))  
+                self.ui.applications_table.setItem(row_index, 1, QTableWidgetItem(str(row_data['Adınız Soyadınız'])))  
+                self.ui.applications_table.setItem(row_index, 2, QTableWidgetItem(str(row_data['Mail adresiniz'])))  
+                self.ui.applications_table.setItem(row_index, 3, QTableWidgetItem(str(row_data['Telefon Numaranız'])))  
+                self.ui.applications_table.setItem(row_index, 4, QTableWidgetItem(str(row_data['Posta Kodunuz'])))  
+                self.ui.applications_table.setItem(row_index, 5, QTableWidgetItem(str(row_data['Yaşadığınız Eyalet'])))  
+                self.ui.applications_table.setItem(row_index, 6, QTableWidgetItem(str(row_data['Şu anki durumunuz'])))  
             print(f"✅ {len(df)} Application kaydı başarıyla yüklendi!")
 
         except Exception as e:
@@ -138,25 +128,25 @@ class Application_Window(QMainWindow):
             df = pd.read_excel(file_path, engine="openpyxl")
 
             # 'Mentor görüşmesi' sütununda 'OK' olan verileri filtrele
-            filtered_df = df[df["Mentor görüşmesi"].astype(str).str.strip().eq("OK")]
+            filtered_df = df[df["Mentor gorusmesi"].astype(str).str.strip().eq("OK")]
 
             # Eğer sonuç boşsa tabloyu temizle
-            self.ui.tableWidget_butunGorusmeler.setRowCount(0)
+            self.ui.applications_table.setRowCount(0)
+            self.ui.applications_table.setRowCount(len(filtered_df))
 
             if filtered_df.empty:
                 print("⚠️ 'OK' olan Mentor görüşmesi bulunamadı!")
                 return
 
             # Tabloyu temizleyip filtrelenen verileri ekleyelim
-            for row_index, row_data in filtered_df.iterrows():
-                self.ui.tableWidget_butunGorusmeler.insertRow(row_index)
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 0, QTableWidgetItem(str(row_data.get("Zaman damgası", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 1, QTableWidgetItem(str(row_data.get("Adınız Soyadınız", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 2, QTableWidgetItem(str(row_data.get("Mail adresiniz", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 3, QTableWidgetItem(str(row_data.get("Telefon Numaranız", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 4, QTableWidgetItem(str(row_data.get("Posta Kodunuz", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 5, QTableWidgetItem(str(row_data.get("Yaşadığınız Eyalet", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 6, QTableWidgetItem(str(row_data.get("Şu anki durumunuz", ""))))
+            for row_index in range(len(filtered_df)):
+                self.ui.applications_table.setItem(row_index, 0, QTableWidgetItem(str(filtered_df.iloc[row_index]['Zaman damgası'])))  
+                self.ui.applications_table.setItem(row_index, 1, QTableWidgetItem(str(filtered_df.iloc[row_index]['Adınız Soyadınız'])))  
+                self.ui.applications_table.setItem(row_index, 2, QTableWidgetItem(str(filtered_df.iloc[row_index]['Mail adresiniz'])))  
+                self.ui.applications_table.setItem(row_index, 3, QTableWidgetItem(str(filtered_df.iloc[row_index]['Telefon Numaranız'])))  
+                self.ui.applications_table.setItem(row_index, 4, QTableWidgetItem(str(filtered_df.iloc[row_index]['Posta Kodunuz'])))  
+                self.ui.applications_table.setItem(row_index, 5, QTableWidgetItem(str(filtered_df.iloc[row_index]['Yaşadığınız Eyalet'])))  
+                self.ui.applications_table.setItem(row_index, 6, QTableWidgetItem(str(filtered_df.iloc[row_index]['Şu anki durumunuz'])))  
 
             print(f"✅ 'OK' olan {len(filtered_df)} kayıt bulundu ve tabloya yansıtıldı.")
 
@@ -171,25 +161,27 @@ class Application_Window(QMainWindow):
             df = pd.read_excel(file_path, engine="openpyxl")
 
             # 'Mentor görüşmesi' sütununda 'ATANMADI' olan verileri filtrele
-            filtered_df = df[df["Mentor görüşmesi"].astype(str).str.strip().eq("ATANMADI")]
+            filtered_df = df[df["Mentor gorusmesi"].astype(str).str.strip().eq("ATANMADI")]
 
             # Eğer sonuç boşsa tabloyu temizle
-            self.ui.tableWidget_butunGorusmeler.setRowCount(0)
+            self.ui.applications_table.setRowCount(0)
+            self.ui.applications_table.setRowCount(len(filtered_df))
+
 
             if filtered_df.empty:
                 print("⚠️ 'ATANMADI' olan Mentor görüşmesi bulunamadı!")
                 return
+            
 
             # Tabloyu temizleyip filtrelenen verileri ekleyelim
-            for row_index, row_data in filtered_df.iterrows():
-                self.ui.tableWidget_butunGorusmeler.insertRow(row_index)
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 0, QTableWidgetItem(str(row_data.get("Zaman damgası", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 1, QTableWidgetItem(str(row_data.get("Adınız Soyadınız", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 2, QTableWidgetItem(str(row_data.get("Mail adresiniz", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 3, QTableWidgetItem(str(row_data.get("Telefon Numaranız", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 4, QTableWidgetItem(str(row_data.get("Posta Kodunuz", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 5, QTableWidgetItem(str(row_data.get("Yaşadığınız Eyalet", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 6, QTableWidgetItem(str(row_data.get("Şu anki durumunuz", ""))))
+            for row_index in range(len(filtered_df)):
+                self.ui.applications_table.setItem(row_index, 0, QTableWidgetItem(str(filtered_df.iloc[row_index]['Zaman damgası'])))  
+                self.ui.applications_table.setItem(row_index, 1, QTableWidgetItem(str(filtered_df.iloc[row_index]['Adınız Soyadınız'])))  
+                self.ui.applications_table.setItem(row_index, 2, QTableWidgetItem(str(filtered_df.iloc[row_index]['Mail adresiniz'])))  
+                self.ui.applications_table.setItem(row_index, 3, QTableWidgetItem(str(filtered_df.iloc[row_index]['Telefon Numaranız'])))  
+                self.ui.applications_table.setItem(row_index, 4, QTableWidgetItem(str(filtered_df.iloc[row_index]['Posta Kodunuz'])))  
+                self.ui.applications_table.setItem(row_index, 5, QTableWidgetItem(str(filtered_df.iloc[row_index]['Yaşadığınız Eyalet'])))  
+                self.ui.applications_table.setItem(row_index, 6, QTableWidgetItem(str(filtered_df.iloc[row_index]['Şu anki durumunuz'])))  
 
             print(f"✅ 'ATANMADI' olan {len(filtered_df)} kayıt bulundu ve tabloya yansıtıldı.")
 
@@ -199,41 +191,31 @@ class Application_Window(QMainWindow):
 
     def search_application(self):
    
-        file_path = "Basvurular.xlsx"  # Excel dosyasının adı
+        file_path = "Basvurular.xlsx"  # Excel dosya adı
         search_text = self.ui.applications_search_line.text().strip().lower()  # Kullanıcı girişini al
-
-        if not search_text:
-            print("⚠️ Lütfen aramak için bir isim girin.")
-            return
 
         try:
             # Excel dosyasını oku
             df = pd.read_excel(file_path, engine="openpyxl")
 
-            # 'Adınız Soyadınız' sütununda, search_text içeren kayıtları filtrele
-            filtered_df = df[df["Adınız Soyadınız"].astype(str).str.lower().str.contains(search_text, regex=False, na=False)]
+            # Sadece eşleşen verileri al
+            filtered_df = df[df['Adınız Soyadınız'].astype(str).str.lower().str.contains(search_text, regex=False, na=False)]
 
-            # Eğer sonuç boşsa tabloyu temizle
-            self.ui.tableWidget_butunGorusmeler.setRowCount(0)
+            # Önce tabloyu temizle
+            self.ui.applications_table.clearContents()
+            self.ui.applications_table.setRowCount(len(filtered_df))
 
-            if filtered_df.empty:
-                print(f"⚠️ '{search_text}' ismine uygun kayıt bulunamadı!")
-                return
+            # ✅ Doğru sütun isimleriyle sıralı şekilde ekle
+            for row_index in range(len(filtered_df)):
+                self.ui.applications_table.setItem(row_index, 0, QTableWidgetItem(str(filtered_df.iloc[row_index]['Zaman damgası'])))  
+                self.ui.applications_table.setItem(row_index, 1, QTableWidgetItem(str(filtered_df.iloc[row_index]['Adınız Soyadınız'])))  
+                self.ui.applications_table.setItem(row_index, 2, QTableWidgetItem(str(filtered_df.iloc[row_index]['Mail adresiniz'])))  
+                self.ui.applications_table.setItem(row_index, 3, QTableWidgetItem(str(filtered_df.iloc[row_index]['Telefon Numaranız'])))  
+                self.ui.applications_table.setItem(row_index, 4, QTableWidgetItem(str(filtered_df.iloc[row_index]['Yaşadığınız Eyalet'])))  
+                self.ui.applications_table.setItem(row_index, 5, QTableWidgetItem(str(filtered_df.iloc[row_index]['Şu anki durumunuz'])))  
 
-            # Tabloyu temizleyip filtrelenen verileri ekleyelim
-            for row_index, row_data in filtered_df.iterrows():
-                self.ui.tableWidget_butunGorusmeler.insertRow(row_index)
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 0, QTableWidgetItem(str(row_data.get("Zaman damgası", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 1, QTableWidgetItem(str(row_data.get("Adınız Soyadınız", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 2, QTableWidgetItem(str(row_data.get("Mail adresiniz", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 3, QTableWidgetItem(str(row_data.get("Telefon Numaranız", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 4, QTableWidgetItem(str(row_data.get("Posta Kodunuz", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 5, QTableWidgetItem(str(row_data.get("Yaşadığınız Eyalet", ""))))
-                self.ui.tableWidget_butunGorusmeler.setItem(row_index, 6, QTableWidgetItem(str(row_data.get("Şu anki durumunuz", ""))))
-
-            print(f"✅ '{search_text}' ile eşleşen {len(filtered_df)} kayıt bulundu ve tabloya yansıtıldı.")
+            print(f"✅ '{search_text}' ile ilgili {len(filtered_df)} kayıt bulundu ve tabloya yansıtıldı.")
 
         except Exception as e:
             print(f"⚠️ Hata oluştu: {e}")
-
     

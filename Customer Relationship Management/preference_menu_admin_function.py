@@ -17,7 +17,7 @@ class AdminPreferenceMenuWindow(QMainWindow):
 
         print("AdminPreferenceMenuWindow yüklendi.")
         # Butonlara tıklanınca ilgili fonksiyonu çağır
-        self.ui.pushButton_applications_2.clicked.connect(self.open_applications)
+        self.ui.pushButton_applications_2.clicked.connect(self.open_application)
         print("pushButton_applications_2 bağlandı.")
         
         self.ui.pushButton_mentorMeeting.clicked.connect(self.open_mentor_interview)
@@ -37,7 +37,7 @@ class AdminPreferenceMenuWindow(QMainWindow):
         self.admin_menu_window = None
 
     def open_application(self):
-        print("Application butonuna basıldı (User olarak açılıyor).")
+        print("Application butonuna basıldı Admin olarak açılıyor).")
         self.application_window = Application_Window(user_type="admin")  # User olduğunu belirtiyoruz
         self.application_window.show()
         self.close()
