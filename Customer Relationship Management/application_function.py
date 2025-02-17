@@ -1,10 +1,7 @@
 from PyQt6.QtWidgets import *
-from mentor_interview import Ui_MentorInterview
 import gdown
 import pandas as pd
 import sys
-from preference_menu_user import Ui_Preference_menu_user
-from preference_menu_admin import Ui_preference_menu_admin
 from application import Ui_Applications
 
 def download_and_read_Application():
@@ -23,9 +20,7 @@ def download_and_read_Application():
         return None
     
 downloaded_data3 = download_and_read_Application()
-if downloaded_data3 is not None:
-    print(downloaded_data3['Telefon Numaranız'])
-    print(downloaded_data3['Posta Kodunuz'])
+
 
 class Application_Window(QMainWindow):
     def __init__(self, user_type = "user"):

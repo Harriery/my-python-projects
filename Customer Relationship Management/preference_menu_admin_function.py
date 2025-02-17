@@ -7,6 +7,7 @@ from interviews import Ui_Interviews
 from admin_menu import Ui_AdminMenu
 from mentor_interviews_function import MentorInterviewsWindow
 from application_function import Application_Window
+from interviews_function import Interview_Window
 
 
 class AdminPreferenceMenuWindow(QMainWindow):
@@ -29,12 +30,23 @@ class AdminPreferenceMenuWindow(QMainWindow):
         self.ui.pushButton_adminMenu.clicked.connect(self.open_admin_menu)
         print("pushButton_adminMenu bağlandı.")
 
+        self.ui.pushButton_Exit.clicked.connect(self.exit)
+        
+
 
         # Yeni pencereleri saklamak için değişkenler
         self.applications_window = None
         self.mentor_interview_window = None
         self.interviews_window = None
         self.admin_menu_window = None
+
+    def exit(self):
+       """Pencereyi kapatır ve uygulamadan çıkar."""
+       try:
+           self.close()  # Mevcut pencereyi kapat
+           print("Pencere başarıyla kapatıldı.")
+       except Exception as e:
+           print(f"Pencere kapatılırken hata oluştu: {e}")
 
     def open_application(self):
         print("Application butonuna basıldı Admin olarak açılıyor).")
@@ -50,9 +62,7 @@ class AdminPreferenceMenuWindow(QMainWindow):
 
     def open_interviews(self):
         print("Interviews butonuna basıldı.")
-        self.interviews_window = QMainWindow()
-        ui = Ui_Interviews()
-        ui.setupUi(self.interviews_window)
+        self.interviews_window =Interview_Window(user_type="admin")
         self.interviews_window.show()
         self.close()
 

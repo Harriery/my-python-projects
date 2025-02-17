@@ -6,6 +6,7 @@ from mentor_interview import Ui_MentorInterview
 from interviews import Ui_Interviews
 from mentor_interviews_function import MentorInterviewsWindow
 from application_function import Application_Window
+from interviews_function import Interview_Window
 
 
 class UserPreferenceMenuWindow(QMainWindow):
@@ -25,12 +26,21 @@ class UserPreferenceMenuWindow(QMainWindow):
         self.ui.pushButton_interviews.clicked.connect(self.open_interviews)
         print("pushButton_interviews bağlandı.")
         
+        self.ui.pushButton_Exit_2.clicked.connect(self.exit)
 
         # Yeni pencereleri saklamak için değişkenler
         self.applications_window = None
         self.mentor_interview_window = None
         self.interviews_window = None
         
+
+    def exit(self):
+       """Pencereyi kapatır ve uygulamadan çıkar."""
+       try:
+           self.close()  # Mevcut pencereyi kapat
+           print("Pencere başarıyla kapatıldı.")
+       except Exception as e:
+           print(f"Pencere kapatılırken hata oluştu: {e}")
 
     def open_applications(self):
         """Applications ekranını açar"""
@@ -54,9 +64,7 @@ class UserPreferenceMenuWindow(QMainWindow):
 
 
     def open_interviews(self):
-        """Interviews ekranını açar"""
-        self.interviews_window = QMainWindow()  # Interviews penceresini başlat
-        self.interviews_ui = Ui_Interviews()  # Interviews UI'sini yükle
-        self.interviews_ui.setupUi(self.interviews_window)  # UI'yi pencereye uygula
-        self.interviews_window.show()  # Interviews ekranını göster
+        print("Interviews butonuna basıldı.")
+        self.interviews_window =Interview_Window(user_type="user")
+        self.interviews_window.show()
         self.close()

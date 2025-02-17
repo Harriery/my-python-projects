@@ -22,9 +22,7 @@ def download_and_read_Mentor():
         return None
     
 downloaded_data2 = download_and_read_Mentor()
-if downloaded_data2 is not None:
-    print(downloaded_data2['Yorum'])
-    print(downloaded_data2['Mentor'])
+
     
 class MentorInterviewsWindow(QMainWindow):
     def __init__(self,user_type="user"):
@@ -49,14 +47,6 @@ class MentorInterviewsWindow(QMainWindow):
 
         self.ui.interviews_search_button.clicked.connect(self.search_interviews)
         print("interviews_search_button bağlandı.")
-
-
-
-
-
-
-
-
 
     def exit(self):
         print("exit butonuna basıldı!")
