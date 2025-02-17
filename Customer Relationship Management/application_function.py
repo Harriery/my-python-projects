@@ -28,6 +28,7 @@ class Application_Window(QMainWindow):
         self.ui = Ui_Applications()
         self.ui.setupUi(self)
         self.user_type=user_type
+        print(f"Application penceresi açıldı. Kullanıcı tipi: {self.user_type}")
 
         print("Application_Window yüklendi.")
         # Butonlara tıklanınca ilgili fonksiyonu çağır

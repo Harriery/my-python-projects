@@ -43,12 +43,12 @@ class UserPreferenceMenuWindow(QMainWindow):
            print(f"Pencere kapatılırken hata oluştu: {e}")
 
     def open_applications(self):
-        """Applications ekranını açar"""
-        self.applications_window = QMainWindow()  # Applications penceresini başlat
-        self.applications_ui = Ui_Applications()  # Applications UI'sini yükle
-        self.applications_ui.setupUi(self.applications_window)  # UI'yi pencereye uygula
-        self.applications_window.show()  # Applications ekranını göster
+        
+        print("Application butonuna basıldı (User olarak açılıyor).")
+        self.application_window = Application_Window(user_type="user")  # Doğru şekilde çağır
+        self.application_window.show()
         self.close()
+
 
     def open_mentor_interview(self):
         print("Mentor Interview butonuna basıldı (User olarak açılıyor).")
@@ -56,11 +56,7 @@ class UserPreferenceMenuWindow(QMainWindow):
         self.mentor_interview_window.show()
         self.close()
 
-    def open_application(self):
-        print("Application butonuna basıldı (User olarak açılıyor).")
-        self.application_window = Application_Window(user_type="user")  # User olduğunu belirtiyoruz
-        self.application_window.show()
-        self.close()
+
 
 
     def open_interviews(self):
