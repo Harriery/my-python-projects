@@ -150,7 +150,7 @@ QPushButton:pressed {
     </font>
    </property>
    <property name="text">
-    <string>Event Recording</string>
+    <string>Event Control</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_mail">

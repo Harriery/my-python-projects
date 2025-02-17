@@ -8,7 +8,6 @@ from admin_menu import Ui_AdminMenu
 from mentor_interviews_function import MentorInterviewsWindow
 from application_function import Application_Window
 
-
 class AdminPreferenceMenuWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -28,7 +27,6 @@ class AdminPreferenceMenuWindow(QMainWindow):
         
         self.ui.pushButton_adminMenu.clicked.connect(self.open_admin_menu)
         print("pushButton_adminMenu bağlandı.")
-
 
         # Yeni pencereleri saklamak için değişkenler
         self.applications_window = None
@@ -58,8 +56,7 @@ class AdminPreferenceMenuWindow(QMainWindow):
 
     def open_admin_menu(self):
         print("Admin Menu butonuna basıldı.")
-        self.admin_menu_window = QMainWindow()
-        ui = Ui_AdminMenu()
-        ui.setupUi(self.admin_menu_window)
+        from admin_menu_function import Admin_MenuFunction  # Import inside the function to avoid circular import
+        self.admin_menu_window = Admin_MenuFunction(user_type="admin")
         self.admin_menu_window.show()
         self.close()
