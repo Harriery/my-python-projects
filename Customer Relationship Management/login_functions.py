@@ -23,9 +23,7 @@ def download_and_read_users():
         return None
 
 downloaded_data = download_and_read_users()
-if downloaded_data is not None:
-    print(downloaded_data['kullanici'])
-    print(downloaded_data['yetki'])
+
 
 ui = Ui_LoginWindow()
 

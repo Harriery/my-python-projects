@@ -1,14 +1,12 @@
 import sys
 from PyQt6.QtWidgets import *
 from login import Ui_LoginWindow
-from preference_menu_admin import Ui_preference_menu_admin
 from preference_menu_admin_function import AdminPreferenceMenuWindow
 from preference_menu_user import Ui_Preference_menu_user
 from application import Ui_Applications
-from admin_menu import Ui_AdminMenu
 from interviews import Ui_Interviews
-from mentor_interview import Ui_MentorInterview
-from mentor_interviews_function import MentorInterviewsWindow
+
+
 
 
 
