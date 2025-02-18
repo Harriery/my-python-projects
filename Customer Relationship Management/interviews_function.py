@@ -24,8 +24,6 @@ def download_and_read_Interviews():
         return None
     
 downloaded_data3 = download_and_read_Interviews()
-if downloaded_data3 is not None:
-    print(downloaded_data3['Adınız Soyadınız'])
 
 class Interview_Window(QMainWindow):
     def __init__(self, user_type = "user"):

@@ -65,11 +65,10 @@ class AdminPreferenceMenuWindow(QMainWindow):
         self.interviews_window =Interview_Window(user_type="admin")
         self.interviews_window.show()
         self.close()
-
+        
     def open_admin_menu(self):
         print("Admin Menu butonuna basıldı.")
-        self.admin_menu_window = QMainWindow()
-        ui = Ui_AdminMenu()
-        ui.setupUi(self.admin_menu_window)
+        from admin_menu_function import Admin_MenuFunction  # Import inside the function to avoid circular import
+        self.admin_menu_window = Admin_MenuFunction(user_type="admin")
         self.admin_menu_window.show()
         self.close()
