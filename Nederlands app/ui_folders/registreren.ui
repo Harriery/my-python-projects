@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Registreren</class>
+ <widget class="QWidget" name="Registreren">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>554</width>
+    <height>590</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Registreren</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-image: url(&quot;C:/Users/harri/Desktop/Nederlands app/images/arkaplan_resmi.webp&quot;);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/* Başlık Frame'i */
+QFrame#headerFrame {
+    background: transparent; /* Şeffaf bırak */
+    border: none;
+}
+
+QLabel {
+	background: transparent; 
+    font-size: 18px;
+    font-weight: bold;
+    color: #31857F;
+}
+
+/* Kullanıcı Girişi Frame'i */
+QFrame#inputFrame {
+    background: transparent; 
+    border-radius: 15px;
+}
+
+QLineEdit {
+    background-color: #f0f5f9;
+    border: 2px solid #5EAAA8;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Butonların Bulunduğu Frame */
+QFrame#buttonFrame {
+    background: transparent;
+}
+QPushButton {
+    background-color: #5EAAA8; /* Normal buton rengi */
+    color: #F4D03F; /* Sarımsı yazı rengi */
+    border-radius: 10px;
+    padding: 8px 15px;
+	font-family: &quot;Comic Sans MS&quot;;
+    font-size: 17px;
+    border: 2px solid #31857F;
+}
+
+/* Mouse ile üzerine gelince */
+QPushButton:hover {
+    background-color: #76C7C0; /* Daha açık yeşil */
+    border: 2px solid #5EAAA8;
+}
+
+/* Tıklayınca */
+QPushButton:pressed {
+    background-color: #EAF4F4; /* Açık renk */
+    border: 2px solid #5EAAA8;
+}
+
+/* Butonun şeffaf olmasını önlemek için */
+QPushButton:!disabled {
+    background: #5EAAA8; 
+}
+</string>
+  </property>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>100</y>
+     <width>331</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame {
+    background: transparent; /* Şeffaf bırak */
+    border: none;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLineEdit" name="lineEdit_gebruikersnaam">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Voer uw gebruikersnaam in...</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_wachtwoord">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>160</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Voer uw wachtwoord in...</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_email">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>260</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Voer uw e-mail in...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    font-family: &quot;Comic Sans MS&quot;; /* Daha eğlenceli ve oyunumsu bir font */
+    font-size: 13pt; /* Boyutu biraz daha artırdık, daha dikkat çekici olsun */
+    font-weight: bold; /* Kalın yazı (eğlenceli duruşu koruyor) */
+}</string>
+    </property>
+    <property name="text">
+     <string>Gebruikersnaam</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    font-family: &quot;Comic Sans MS&quot;; /* Daha eğlenceli ve oyunumsu bir font */
+    font-size: 13pt; /* Boyutu biraz daha artırdık, daha dikkat çekici olsun */
+    font-weight: bold; /* Kalın yazı (eğlenceli duruşu koruyor) */
+}</string>
+    </property>
+    <property name="text">
+     <string>Wachtwoord</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>220</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    font-family: &quot;Comic Sans MS&quot;; /* Daha eğlenceli ve oyunumsu bir font */
+    font-size: 13pt; /* Boyutu biraz daha artırdık, daha dikkat çekici olsun */
+    font-weight: bold; /* Kalın yazı (eğlenceli duruşu koruyor) */
+}</string>
+    </property>
+    <property name="text">
+     <string>E-mail</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_registratieVoltooien">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>360</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Registratie Voltooien</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>30</y>
+     <width>371</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Comic Sans MS</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font-family: &quot;Comic Sans MS&quot;; /* Daha eğlenceli ve oyunumsu bir font */
+    font-size: 25pt; /* Boyutu biraz daha artırdık, daha dikkat çekici olsun */
+    font-weight: bold; /* Kalın yazı (eğlenceli duruşu koruyor) */
+    color: #F57C00; /* Daha koyu turuncu ton (orijinal #FF9800’dan daha derin) */
+}</string>
+   </property>
+   <property name="text">
+    <string>Registreren</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

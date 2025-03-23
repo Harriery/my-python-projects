@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>voorkeurenpagina</class>
+ <widget class="QWidget" name="voorkeurenpagina">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>750</width>
+    <height>650</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Voorkeurenpagina</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-image: url(&quot;C:/Users/harri/Desktop/Nederlands app/images/arkaplan_resmi.webp&quot;);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+QLabel {
+	background: transparent; 
+    font-size: 18px;
+    font-weight: bold;
+    color: #31857F;
+}
+
+
+
+QLineEdit {
+    background-color: #f0f5f9;
+    border: 2px solid #5EAAA8;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+QPushButton {
+    background-color: #5EAAA8; /* Normal buton rengi */
+    color: #F4D03F; /* Sarımsı yazı rengi */
+    border-radius: 10px;
+	font-family: &quot;Comic Sans MS&quot;;
+    padding: 8px 15px;
+    font-size: 20px;
+    border: 2px solid #31857F;
+}
+
+/* Mouse ile üzerine gelince */
+QPushButton:hover {
+    background-color: #76C7C0; /* Daha açık yeşil */
+    border: 2px solid #5EAAA8;
+}
+
+/* Tıklayınca */
+QPushButton:pressed {
+    background-color: #EAF4F4; /* Açık renk */
+    border: 2px solid #5EAAA8;
+}
+
+/* Butonun şeffaf olmasını önlemek için */
+QPushButton:!disabled {
+    background: #5EAAA8; 
+}
+QPushButton#pushButton_uitloggen {
+    background-color: #5EAAA8;
+    color: #F4D03F;
+    border: none; /* Border tamamen kaldırıldı */
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-size: 20px;
+    icon-size: 32px;
+}
+
+/* Mouse üzerine gelince büyüme efekti */
+QPushButton#pushButton_uitloggen:hover {
+    background-color: #76C7C0;
+    transform: scale(1.1); /* %10 büyüme efekti */
+}
+</string>
+  </property>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>593</y>
+     <width>401</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QProgressBar {
+    border: 2px solid #666; /* Koyu gri kenarlık */
+    border-radius: 5px; /* Hafif yuvarlak köşeler */
+    background-color: #F5F5F5; /* Açık gri arka plan */
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #FF9800; /* Turuncu dolgu */
+    border-radius: 5px; /* Yuvarlak dolgu köşeleri */
+    width: 10px;
+}</string>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_uitloggen">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>14</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background: transparent; 
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/logout.png</normaloff>../icons/logout.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_woordstudie">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>213</y>
+     <width>251</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Woordstudie</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_welkom_userName">
+   <property name="geometry">
+    <rect>
+     <x>584</x>
+     <y>17</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_grammatica">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>213</y>
+     <width>261</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bestudeer grammatica</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>503</x>
+     <y>17</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: &quot;Comic Sans MS&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Welkom,</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="title">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>97</y>
+     <width>431</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Comic Sans MS</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#title {
+    font-family: &quot;Comic Sans MS&quot;; /* Daha eğlenceli ve oyunumsu bir font */
+    font-size: 25pt; /* Boyutu biraz daha artırdık, daha dikkat çekici olsun */
+    font-weight: bold; /* Kalın yazı (eğlenceli duruşu koruyor) */
+    color: #F57C00; /* Daha koyu turuncu ton (orijinal #FF9800’dan daha derin) */
+}</string>
+   </property>
+   <property name="text">
+    <string>Je Nederlandse reis </string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_maakQuiz">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>350</y>
+     <width>251</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Maak Quiz</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_voortgangBekijken">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>350</y>
+     <width>261</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mijn Voortgang Bekijken</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>553</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Uw voortgang</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

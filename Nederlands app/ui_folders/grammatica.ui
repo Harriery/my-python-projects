@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>904</width>
+    <height>969</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Grammatica</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-image: url(&quot;C:/Users/harri/Desktop/Nederlands app/images/arkaplan_resmi.webp&quot;);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/* Başlık Frame'i */
+QFrame {
+    background: transparent; /* Şeffaf bırak */
+    border: none;
+}
+QTextEdit {
+    background-color: #f0f8ff; /* Açık mavi tonunda arka plan */
+    border: 2px solid #4682b4; /* Hafif koyu mavi çerçeve */
+    border-radius: 8px; /* Köşeleri yuvarlak yap */
+    padding: 6px; /* İçeride boşluk bırak */
+    font-size: 14px;
+    color: #333; /* Yazı rengi */
+}
+
+
+QLabel {
+	background: transparent; 
+    font-size: 18px;
+    font-weight: bold;
+    color: #31857F;
+}
+
+/* Kullanıcı Girişi Frame'i */
+QFrame#inputFrame {
+    background: transparent; 
+    border-radius: 15px;
+}
+
+QLineEdit {
+    background-color: #f0f5f9;
+    border: 2px solid #5EAAA8;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Butonların Bulunduğu Frame */
+QFrame#progressFrame {
+    background: transparent;
+}
+QPushButton {
+    background-color: #5EAAA8; /* Normal buton rengi */
+    color: #F4D03F; /* Sarımsı yazı rengi */
+    border-radius: 10px;
+	font-family: &quot;Comic Sans MS&quot;;
+    padding: 8px 15px;
+    font-size: 20px;
+    border: 2px solid #31857F;
+}
+
+/* Mouse ile üzerine gelince */
+QPushButton:hover {
+    background-color: #76C7C0; /* Daha açık yeşil */
+    border: 2px solid #5EAAA8;
+}
+
+/* Tıklayınca */
+QPushButton:pressed {
+    background-color: #EAF4F4; /* Açık renk */
+    border: 2px solid #5EAAA8;
+}
+
+/* Butonun şeffaf olmasını önlemek için */
+QPushButton:!disabled {
+    background: #5EAAA8; 
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>10</y>
+        <width>481</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+    font-family: &quot;Comic Sans MS&quot;; /* Daha eğlenceli ve oyunumsu bir font */
+    font-size: 25pt; /* Boyutu biraz daha artırdık, daha dikkat çekici olsun */
+    font-weight: bold; /* Kalın yazı (eğlenceli duruşu koruyor) */
+    color: #F57C00; /* Daha koyu turuncu ton (orijinal #FF9800’dan daha derin) */
+}</string>
+      </property>
+      <property name="text">
+       <string>Grammaticapraktijk</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_gramerSec">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>160</y>
+        <width>361</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>115</y>
+        <width>301</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Kies een grammaticaonderwerp</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_tukce">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>296</y>
+        <width>791</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>Voer een zin in het Turks in</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_hollandaca">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>355</y>
+        <width>791</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>Voer een zin in het Nederlands in</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_kaydet">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>410</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Opslaan</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_sil">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>410</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Verwijderen</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_duzenle">
+      <property name="geometry">
+       <rect>
+        <x>681</x>
+        <y>410</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Wijzigen</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_aciklama">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>150</y>
+        <width>421</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEdit_aciklama {
+    background-color: #f0f5f9; /* Açık sarı tonu (tablodaki gibi) */
+    border: 2px solid #5EAAA8; /* Çerçeve */
+    border-radius: 8px;
+    padding: 6px;
+    font-size: 14px;
+    color: #333;
+}
+</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>110</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Beschrijving</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_2">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButton_ara">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>20</y>
+        <width>93</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Zoek</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_metinAra">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>23</y>
+        <width>681</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_geriDon">
+      <property name="geometry">
+       <rect>
+        <x>552</x>
+        <y>407</y>
+        <width>291</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Terug naar startpagina</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget_grammatica">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>90</y>
+        <width>801</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(246, 255, 205);</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
