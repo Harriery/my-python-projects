@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import * 
 from voorkeurenpagina import Ui_voorkeurenpagina
-from woordstudie import Ui_Woordstudie
+from woordstudie_function import WoordstudieWindow
 
 class VoorkeurWindow(QMainWindow):
     def __init__(self, username):  # username parametresini ekle
@@ -23,9 +23,7 @@ class VoorkeurWindow(QMainWindow):
 
     def open_woordstudiepagina(self):
         print("Woordstudie butonuna tıklandı")
-        self.woordstudie_window = QMainWindow()  # Yeni pencere oluştur
-        ui_woordstudie = Ui_Woordstudie()  # Ui_Woordstudie nesnesi oluştur
-        ui_woordstudie.setupUi(self.woordstudie_window)  # Pencereye UI'yi uygula
+        self.woordstudie_window = WoordstudieWindow()  # Yeni pencere oluştur
         self.woordstudie_window.show()  # Pencereyi göster
         print("Woordstudie penceresi açıldı!")
         self.hide() 

@@ -1,5 +1,4 @@
 import psycopg2
-import bcrypt  # Şifreleri güvenli kıyaslamak için
 
 # Veritabanına bağlanmak için fonksiyon
 def connect_to_db():
@@ -17,7 +16,7 @@ def connect_to_db():
         return None
 
 # Kullanıcı adı ve şifre kontrolü
-def check_username(username, password):
+def check_password(username, password):
     conn = connect_to_db()
     if not conn:
         return False
@@ -28,16 +27,17 @@ def check_username(username, password):
         cursor.execute(query, (username,))
         user = cursor.fetchone()
 
-        cursor.close()
-        conn.close()
-
         if user:
-            hashed_password = user[0]  # Veritabanından gelen hash
-            return bcrypt.checkpw(password.encode(), hashed_password.encode())  # Şifreyi doğrula
+            stored_password = user[0]  # Veritabanından gelen şifre (düz metin olarak saklandığını varsayıyoruz)
+            return password == stored_password  # Düz metin karşılaştırması
+        
         return False  # Kullanıcı bulunamadıysa False dön
     except Exception as e:
         print(f"Sorgu hatası: {e}")
         return False
+    finally:
+        cursor.close()
+        conn.close()
 
 def get_words():
     conn = connect_to_db()
@@ -49,7 +49,7 @@ def get_words():
         query = "SELECT * FROM words"
         cursor.execute(query)
         words = cursor.fetchall()  # Sonucu al
-
+        print("Gelen veriler:", words)  # Test için
         return words  # Verileri döndür
     except Exception as e:
         print(f"Sorgu hatası: {e}")
@@ -114,3 +114,43 @@ def check_username(username):
     finally:
         cursor.close()
         conn.close()
+
+def get_words_by_type(word_type_id):
+    """Belirtilen kelime türüne ait kelimeleri getir"""
+    conn = connect_to_db()
+    if not conn:
+        return False
+    try:
+        cursor = conn.cursor()
+        query = "SELECT id, word FROM words WHERE type_id = %s"
+        cursor.execute(query, (word_type_id))
+        words = cursor.fetchall()
+        conn.close()
+        return words if words else []
+    except Exception as e:
+        print(f"Sorgu hatası: {e}")
+        return []
+    finally:
+        cursor.close()
+        conn.close()
+
+def get_word_variations_by_word(word_id):
+    conn = connect_to_db()
+    if not conn:
+        return False
+    try:
+        cursor = conn.cursor()
+        query = "SELECT variation_id, variation_name FROM word_variations WHERE word_id = %s"
+        cursor.execute(query, (word_id))
+        variations = cursor.fetchall()
+        conn.close()
+        return variations if variations else []
+    
+    except Exception as e:
+        print(f"Sorgu hatası: {e}")
+        return []
+    finally:
+        cursor.close()
+        conn.close()
+types = get_word_types()
+print("Kelime Türleri:", types)
