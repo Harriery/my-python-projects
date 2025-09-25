@@ -10,7 +10,8 @@ from preference_menu_user_function import UserPreferenceMenuWindow#Kullanici men
 def download_and_read_users():
     try:
         # Google Drive'dan dosya indirme
-        url = 'https://drive.google.com/uc?id=1SatXOBosige730jIOoR8UAeXQG4UA8Ph'  # Dosya ID'si ile doğru bağlantı
+        url = 'https://drive.google.com/uc?id=16LWUjfA3GltcIPIcv_J0YeChJ13F7gNo'
+        ##https://docs.google.com/spreadsheets/d/16LWUjfA3GltcIPIcv_J0YeChJ13F7gNo/edit?usp=sharing&ouid=114717498349477738696&rtpof=true&sd=true # Dosya ID'si ile doğru bağlantı
         output = 'users.xlsx'
         gdown.download(url, output, quiet=False)
 
