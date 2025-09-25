@@ -2,6 +2,8 @@
 
 <p align="center"> <img src="./images/giris.png" alt="diagram" width="600"/> </p>
 
+[![Watch the video](https://img.youtube.com/vi/2dN-zu4POoo/0.jpg)](https://www.youtube.com/watch?v=2dN-zu4POoo)
+
 ## Over het Project
 Dit project is een Customer Relationship Management (CRM) applicatie ontwikkeld om het beheer van sollicitaties, mentorgesprekken en interviews voor kandidaten te vereenvoudigen, waarbij Google Drive als basis wordt gebruikt.
 

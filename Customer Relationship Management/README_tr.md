@@ -3,6 +3,8 @@
 <p align="center"> <img src="./images/giris.png" alt="diagram" width="600"/> </p>
 
 
+[![Watch the video](https://img.youtube.com/vi/2dN-zu4POoo/0.jpg)](https://www.youtube.com/watch?v=2dN-zu4POoo)
+
 ## Proje Hakkında
 Bu proje, Google Drive üzerinden yürütülen adayların başvuru, mentor görüşmesi ve mülakat süreçlerini kolaylaştırmak amacıyla geliştirilen bir Müşteri İlişkileri Yönetimi (CRM) uygulamasıdır.
 
